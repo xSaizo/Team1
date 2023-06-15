@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+}
+
+// Remove this TODO
+
+.gallery-container {
+  box-sizing: border-box;
+  width: 100%;
+
+  display: grid;
+  place-items: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
+  grid-auto-flow: column;
+  place-items: center;
+
+  > * {
+    display: grid;
+  }
+
+  img {
+    max-width: 100%;
+
+    border-radius: 1px;
+
+    vertical-align: middle;
+  }
+
+  &__col-3 {
+    &__picture--1 {
+      grid-column: span 2;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 768px) {
+  .gallery {
+    gap: 3px;
+
+    > * {
+      display: grid;
+      gap: 3px;
+    }
+
+    &__col-1 {
+      padding-bottom: 2px;
+    }
+
+    &__col-2 {
+      padding-top: 10px;
+    }
+
+    &__col-4 {
+      padding-top: 16px;
+    }
+
+    &__col-5 {
+      padding-top: 4px;
+    }
+
+    &__col-6 {
+      padding-top: 5px;
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .gallery {
+    gap: 6px;
+
+    > * {
+      display: grid;
+      gap: 6px;
+    }
+
+    &__col-1 {
+      padding-bottom: 4px;
+    }
+
+    &__col-2 {
+      padding-top: 24px;
+    }
+
+    &__col-4 {
+      padding-top: 70px;
+    }
+
+    &__col-5 {
+      padding-top: 10px;
+    }
+
+    &__col-6 {
+      padding-top: 14px;
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: 1200px) {
+  .gallery {
+    gap: 8px;
+
+    > * {
+      gap: 8px;
+    }
+
+    &__col-1 {
+      padding-bottom: 6px;
+    }
+
+    &__col-2 {
+      padding-top: 31px;
+    }
+
+    &__col-4 {
+      padding-top: 53px;
+    }
+
+    &__col-5 {
+      padding-top: 18px;
+    }
+
+    &__col-6 {
+      padding-top: 6px;
+    }
+  }
+}
