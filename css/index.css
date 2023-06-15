@@ -3,10 +3,6 @@
   background-color: rgb(255, 184, 202);
 }
 
-body {
-  margin: 0;
-}
-
 .gallery-container {
   box-sizing: border-box;
   width: 100%;
