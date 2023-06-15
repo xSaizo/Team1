@@ -52,6 +52,10 @@
       justify-content: center;
       margin-left: 30px;
       background-color: #fea5bb;
+      &:hover,
+      &:focus {
+        background-color: #d41443;
+      }
     }
     .social-media__icon {
       height: 20px;
