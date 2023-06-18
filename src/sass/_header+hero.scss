@@ -15,6 +15,7 @@
   padding-top: 8px;
 }
 .global-header {
+  animation: 1s ease-out 0s 1 slideInFromTop;
   .container {
     display: flex;
     justify-content: space-between;
@@ -90,6 +91,7 @@
     position: absolute;
     padding-top: 138px;
     z-index: 2;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 
     h1 {
       width: 218px;
@@ -174,6 +176,7 @@
       width: 171px;
       height: 410px;
       z-index: 1;
+      animation: 3s ease-out 0s 1 slideInFromBottom;
     }
     .so-tasty-photo {
       display: none;
@@ -245,6 +248,30 @@
       }
     }
   }
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(200%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
 
 /*Tablet Breackpoint*/
@@ -266,6 +293,7 @@
     padding-top: 32px;
   }
   .global-header {
+    animation: 1s ease-out 0s 1 slideInFromTop;
     .container {
       display: flex;
       justify-content: space-between;
@@ -348,6 +376,7 @@
         margin-block-start: 6px;
         padding-left: 0;
         margin-block-end: 0;
+        animation: 1s ease-out 0s 1 slideInFromLeft;
 
         width: 162px;
         height: 80px;
@@ -432,6 +461,10 @@
     &__description-photo {
       width: 152px;
       height: 154px;
+      animation: 1s ease-out 0s 1 slideInFromLeft;
+    }
+    .description-arrow {
+      animation: 1s ease-out 0s 1 slideInFromLeft;
     }
     &__big-icecream {
       .icecream-photo {
@@ -440,6 +473,7 @@
         top: 87px;
         width: 143px;
         height: 336px;
+        animation: 3s ease-out 0s 1 slideInFromBottom;
       }
       .so-tasty-photo {
         display: block;
@@ -448,6 +482,7 @@
         top: 272px;
         width: 190px;
         height: 150px;
+        animation: 2s ease-out 0s 1 slideInFromRight;
       }
     }
     &__centres {
@@ -456,6 +491,7 @@
         position: absolute;
         left: 718px;
         top: 92px;
+        animation: 2s ease-out 0s 1 slideInFromRightNumbers;
         &__nr {
           font-family: 'Titan One';
           font-style: normal;
@@ -468,6 +504,7 @@
           position: absolute;
           top: 67px;
           left: 694px;
+          animation: 2s ease-out 0s 1 slideInFromRightNumbers;
         }
         &__item {
           position: absolute;
@@ -480,12 +517,14 @@
           font-size: 8px;
           line-height: 10px;
           color: $colorWhite;
+          animation: 2s ease-out 0s 1 slideInFromRightNumbers;
         }
       }
       .second-centre-img {
         position: absolute;
         left: 720px;
         top: 152px;
+        animation: 2s ease-out 0s 1 slideInFromRightNumbers;
         &__nr {
           font-family: 'Titan One';
           font-style: normal;
@@ -498,11 +537,13 @@
           position: absolute;
           left: 692px;
           top: 125px;
+          animation: 2s ease-out 0s 1 slideInFromRightNumbers;
         }
         &__item {
           position: absolute;
           left: 685px;
           top: 180px;
+          animation: 2s ease-out 0s 1 slideInFromRightNumbers;
 
           font-family: 'DM Sans';
           font-style: normal;
@@ -512,6 +553,54 @@
           color: $colorWhite;
         }
       }
+    }
+  }
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromRightNumbers {
+    0% {
+      transform: translateX(700%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(1200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(300%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(200%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 }
