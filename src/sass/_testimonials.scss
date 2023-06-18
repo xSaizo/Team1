@@ -1,0 +1,713 @@
+.testimonials-container {
+  box-sizing: border-box;
+  width: 100%;
+
+  display: grid;
+  place-items: center;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  &__pfp {
+    &--1 {
+      display: block;
+    }
+    &--2 {
+      display: none;
+    }
+    &--3 {
+      display: none;
+    }
+  }
+
+  &__quote-container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    width: 80%;
+    max-width: calc(1200px * (80 / 100));
+
+    // Quote person location
+    & div {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.6;
+
+      // Suspension points
+      &::before {
+        content: '···';
+        display: block;
+
+        font-size: 36px;
+        text-align: center;
+        line-height: 4px;
+        letter-spacing: 8px;
+
+        color: #c7133e;
+
+        padding: 16px 0;
+      }
+    }
+
+    // Quote text
+    &__quote {
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+
+      text-align: center;
+      background: #fafafa;
+
+      margin: 0;
+
+      padding: 47px 0 39px 0;
+
+      // Quote Text + Quotation Marks
+      span:first-child {
+        z-index: 2;
+        position: relative;
+
+        width: 75%;
+
+        $rotate: rotate(-210deg);
+        $scale: scale(1, 1);
+        $color: #e1e1e1;
+        $size: 65px;
+        $top: 0;
+
+        // Quotation marks
+        & {
+          &::after {
+            z-index: -1;
+            transform: $rotate $scale;
+
+            position: absolute;
+            top: $top;
+
+            content: open-quote;
+            color: $color;
+            font-size: $size;
+            font-weight: 700;
+            font-style: italic;
+
+            line-height: 0;
+          }
+
+          &::before {
+            transform: $rotate $scale;
+
+            position: absolute;
+            top: $top;
+
+            content: open-quote;
+            color: $color;
+            font-size: $size;
+            font-weight: 700;
+            font-style: italic;
+
+            line-height: 0;
+          }
+        }
+      }
+
+      // Underline(s)
+      & {
+        @mixin underline($top, $visibility) {
+          position: absolute;
+          top: $top;
+          left: -7%;
+
+          visibility: $visibility;
+
+          content: ' ';
+
+          width: 112%;
+          height: 1px;
+
+          background-color: #e1e1e1;
+        }
+        &__underline {
+          // 8 lines
+          @media screen and (min-width: 271px) {
+            &--1 {
+              @include underline(calc(100% / 8), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 8) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 8) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 8) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 8) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc((100% / 8) * 6), visible);
+            }
+            &--7 {
+              @include underline(calc((100% / 8) * 7), visible);
+            }
+            &--8 {
+              @include underline(calc(100%), visible);
+            }
+          }
+          // 7 lines
+          @media screen and (min-width: 319px) {
+            &--1 {
+              @include underline(calc(100% / 7), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 7) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 7) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 7) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 7) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc((100% / 7) * 6), visible);
+            }
+            &--7 {
+              @include underline(calc(100%), visible);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 6 lines
+          @media screen and (min-width: 346px) {
+            &--1 {
+              @include underline(calc(100% / 6), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 6) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 6) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 6) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 6) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc(100%), visible);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 5 lines
+          @media screen and (min-width: 417px) {
+            &--1 {
+              @include underline(calc(100% / 5), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 5) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 5) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 5) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc(100%), visible);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 4 lines
+          @media screen and (min-width: 505px) {
+            &--1 {
+              @include underline(calc(100% / 4), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 4) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 4) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc(100%), visible);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 3 lines
+          @media screen and (min-width: 687px) {
+            &--1 {
+              @include underline(calc(100% / 3), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 3) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc(100% / 1), visible);
+            }
+            &--4 {
+              @include underline(calc(0), hidden);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 2 lines
+          @media screen and (min-width: 905px) {
+            &--1 {
+              @include underline(calc(100% / 2), visible);
+            }
+            &--2 {
+              @include underline(calc(100% / 1), visible);
+            }
+            &--3 {
+              @include underline(calc(0), hidden);
+            }
+            &--4 {
+              @include underline(calc(0), hidden);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 18px;
+
+    margin-top: 32px;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  // Change default properties of elements
+  & {
+    img {
+      margin-bottom: 16px;
+
+      border-radius: 50%;
+    }
+
+    p {
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      quotes: '❛' '❜';
+      margin: 0;
+    }
+
+    address {
+      display: inline;
+
+      font-style: normal;
+    }
+
+    cite {
+      font-style: normal;
+    }
+
+    u {
+      text-decoration: none;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 767px) {
+  .testimonials {
+    // Change default properties of elements
+    & {
+      p {
+        font: 500 12px/2.4 'DM Sans', sans-serif;
+      }
+    }
+
+    &__quote-container {
+      // Quote person location
+      & div {
+        font-size: 14px;
+      }
+
+      &__quote {
+        // Underline(s)
+        & {
+          @mixin underline($top, $visibility) {
+            position: absolute;
+            top: $top;
+            left: -10%;
+
+            visibility: $visibility;
+
+            content: ' ';
+
+            width: 120%;
+            height: 1px;
+
+            background-color: #e1e1e1;
+          }
+        }
+      }
+    }
+
+    // Quote text + Quotation marks
+    span:first-child {
+      width: 61.5%;
+
+      & {
+        &::after {
+          left: -2px;
+        }
+
+        &::before {
+          left: -27px;
+        }
+      }
+    }
+
+    &__navigation {
+      margin-top: 16px;
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .testimonials {
+    // Change default properties of elements
+    & {
+      p {
+        font: 500 14px/2 'DM Sans', sans-serif;
+      }
+    }
+
+    &__quote-container {
+      // Quote person location
+      & div {
+        font-size: 16px;
+
+        // Suspension points
+        &::before {
+          padding: 4px 0 16px 0;
+        }
+      }
+
+      &__quote {
+        // Underline(s)
+        & {
+          @mixin underline($top, $visibility) {
+            position: absolute;
+            top: $top;
+            left: -11%;
+
+            visibility: $visibility;
+
+            content: ' ';
+
+            width: 122%;
+            height: 1px;
+
+            background-color: #e1e1e1;
+          }
+
+          &__underline {
+            // 8 lines
+            @media screen and (min-width: 271px) {
+              &--1 {
+                @include underline(calc(100% / 8), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 8) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 8) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 8) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 8) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc((100% / 8) * 6), visible);
+              }
+              &--7 {
+                @include underline(calc((100% / 8) * 7), visible);
+              }
+              &--8 {
+                @include underline(calc(100%), visible);
+              }
+            }
+            // 7 lines
+            @media screen and (min-width: 319px) {
+              &--1 {
+                @include underline(calc(100% / 7), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 7) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 7) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 7) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 7) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc((100% / 7) * 6), visible);
+              }
+              &--7 {
+                @include underline(calc(100%), visible);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 6 lines
+            @media screen and (min-width: 346px) {
+              &--1 {
+                @include underline(calc(100% / 6), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 6) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 6) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 6) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 6) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc(100%), visible);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 5 lines
+            @media screen and (min-width: 417px) {
+              &--1 {
+                @include underline(calc(100% / 5), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 5) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 5) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 5) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc(100%), visible);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 4 lines
+            @media screen and (min-width: 505px) {
+              &--1 {
+                @include underline(calc(100% / 4), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 4) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 4) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc(100%), visible);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 3 lines
+            @media screen and (min-width: 687px) {
+              &--1 {
+                @include underline(calc(100% / 3), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 3) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc(100% / 1), visible);
+              }
+              &--4 {
+                @include underline(calc(0), hidden);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 2 lines
+            @media screen and (min-width: 905px) {
+              &--1 {
+                @include underline(calc(100% / 2), visible);
+              }
+              &--2 {
+                @include underline(calc(100% / 1), visible);
+              }
+              &--3 {
+                @include underline(calc(0), hidden);
+              }
+              &--4 {
+                @include underline(calc(0), hidden);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Quotation marks
+    span:first-child {
+      & {
+        width: 80%;
+
+        &::after {
+          z-index: -1;
+          left: -40px;
+        }
+
+        &::before {
+          z-index: -1;
+          left: -62px;
+        }
+      }
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: 1200px) {
+  .testimonials {
+    // Change default properties of elements
+    & {
+      p {
+        font: 500 16px/1.8 'DM Sans', sans-serif;
+      }
+    }
+
+    &__quote-container {
+      // Quote person location
+      & div {
+        font-size: 20px;
+      }
+    }
+
+    span:first-child {
+      & {
+        &::after {
+          left: -35px;
+        }
+
+        &::before {
+          left: -58px;
+        }
+      }
+    }
+  }
+}
