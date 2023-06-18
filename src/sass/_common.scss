@@ -1,1 +1,25 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+/* Maximul pentru mobile */
+@media screen and (min-width: $mobile-breakpoint) {
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* Maximul pentru tableta */
+@media screen and (min-width: $tablet-breakpoint) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+/* Maximul pentru desktop */
+@media screen and (min-width: $desktop-breakpoint) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
