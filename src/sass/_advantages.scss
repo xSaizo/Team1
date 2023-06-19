@@ -17,6 +17,24 @@
     padding-bottom: 66px;
     gap: 32px;
   }
+  .advantages__milk-number::after {
+    content: url(../images/glas-milk-d.png);
+    display: flex;
+    position: absolute;
+    top: 3538px;
+  }
+  .advantages__apples-number::after {
+    content: url(../images/apples-d.png);
+    display: flex;
+    position: absolute;
+    top: 3719px;
+  }
+  .advantages__ingredients-number::after {
+    content: url(../images/icecream-d.png);
+    display: flex;
+    position: absolute;
+    top: 3898px;
+  }
 
   .advantages__milk-number {
     font-family: 'Titan One';
@@ -28,7 +46,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--title-text-color);
-    margin-top: 16px;
+    margin-top: 43px;
     margin-bottom: 4px;
   }
   .advantages__milk-text {
@@ -56,7 +74,7 @@
     text-align: left;
     letter-spacing: 0.04em;
     color: var(--title-text-color);
-    margin-top: 16px;
+    margin-top: 55px;
     margin-bottom: 4px;
   }
 
@@ -85,7 +103,7 @@
     text-align: left;
     letter-spacing: 0.04em;
     color: var(--title-text-color);
-    margin-top: 16px;
+    margin-top: 55px;
     margin-bottom: 4px;
   }
 
@@ -121,6 +139,24 @@
     padding-bottom: 224px;
     gap: 0;
   }
+  .advantages__milk-number::after {
+    content: url(../images/glas-milk-d.png);
+    display: flex;
+    position: absolute;
+    top: 1933px;
+  }
+  .advantages__apples-number::after {
+    content: url(../images/apples-d.png);
+    display: flex;
+    position: absolute;
+    top: 1933px;
+  }
+  .advantages__ingredients-number::after {
+    content: url(../images/icecream-d.png);
+    display: flex;
+    position: absolute;
+    top: 1933px;
+  }
 
   .advantages__milk-number {
     font-family: 'Titan One';
@@ -132,7 +168,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--title-text-color);
-    margin-top: 36px;
+    margin-top: 70px;
     margin-bottom: 13px;
   }
   .advantages__milk-text {
@@ -160,7 +196,7 @@
     text-align: left;
     letter-spacing: 0.04em;
     color: var(--title-text-color);
-    margin-top: 36px;
+    margin-top: 70px;
     margin-bottom: 13px;
   }
 
@@ -189,7 +225,7 @@
     text-align: left;
     letter-spacing: 0.04em;
     color: var(--title-text-color);
-    margin-top: 36px;
+    margin-top: 70px;
     margin-bottom: 13px;
   }
 
@@ -218,6 +254,24 @@
     position: absolute;
     left: -9999px;
   }
+  .advantages__milk-number::after {
+    content: url(../images/glas-milk-d.png);
+    display: flex;
+    position: absolute;
+    top: 2656px;
+  }
+  .advantages__apples-number::after {
+    content: url(../images/apples-d.png);
+    display: flex;
+    position: absolute;
+    top: 2656px;
+  }
+  .advantages__ingredients-number::after {
+    content: url(../images/icecream-d.png);
+    display: flex;
+    position: absolute;
+    top: 2656px;
+  }
 
   .advantages__container {
     display: flex;
@@ -235,7 +289,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--title-text-color);
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 16px;
   }
   .advantages__milk-text {
@@ -263,7 +317,7 @@
     text-align: left;
     letter-spacing: 0.04em;
     color: var(--title-text-color);
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 16px;
   }
 
@@ -292,7 +346,7 @@
     text-align: left;
     letter-spacing: 0.04em;
     color: var(--title-text-color);
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 16px;
   }
 
