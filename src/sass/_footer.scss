@@ -1,0 +1,218 @@
+/*Footer*/
+.footer {
+  background: #fff5f6;
+  color: #907e82;
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 152%;
+
+  &__title {
+    font-family: 'Titan One';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #ffa5ba;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    &--pink {
+      margin-block-start: 0;
+      margin-block-end: 16px;
+      padding: 0px 66px 16px 2px;
+    }
+    &--accent-pink {
+      font-size: 34px;
+      line-height: 39px;
+      letter-spacing: 0.04em;
+      color: #d41443;
+      margin-block-start: 0;
+      margin-block-end: 40px;
+      inline-size: 200px;
+      overflow-wrap: wrap;
+    }
+  }
+
+  &__content {
+    padding: 40px 20px 40px 20px;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+  }
+  &__social-media-links {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 40px;
+    gap: 28px;
+    .social-media__background {
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      background-color: #fea5bb;
+      .icon-git {
+        width: 18.82px;
+        margin: 6.59px;
+      }
+      .icon-telegram {
+        width: 19.2px;
+        margin: 8.53px 5.33px;
+      }
+      .icon-fcb {
+        height: 19.2px;
+        width: 8.8px;
+        margin: 6.4px 12px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: #d41443;
+      }
+      .social-media__icon {
+        height: 18.8px;
+        color: #ffffff;
+      }
+    }
+  }
+  &__contact {
+    text-align: right;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 186%;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-decoration: none;
+    :last-child {
+      text-decoration: none;
+      color: #d41443;
+    }
+  }
+  &__copyright {
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: center;
+  }
+  &__copyright-text {
+    margin-block-start: 16px;
+    margin-block-end: 4px;
+    text-align: center;
+    inline-size: 150px;
+    overflow-wrap: break-word;
+  }
+}
+@media screen and (min-width: 480px) {
+  .footer {
+    font-size: 14px;
+    line-height: 186%;
+    letter-spacing: 0.02em;
+    padding: 40px 20px 4px 16px;
+
+    &__title {
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 30px;
+      letter-spacing: 0.04em;
+      &--pink {
+        margin-block-end: 0;
+        padding: 0px 0px 12px 0px;
+        inline-size: 340px;
+        overflow-wrap: wrap;
+      }
+      &--accent-pink {
+        font-size: 48px;
+        line-height: 55px;
+        letter-spacing: 0.06em;
+        margin-block-start: 0;
+        margin-block-end: 40px;
+      }
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    &__social-media-links {
+      gap: 30px;
+      .social-media__background {
+        height: 34px;
+        width: 34px;
+        .icon-git {
+          width: 20px;
+          margin: 7px;
+        }
+        .icon-telegram {
+          width: 20.4px;
+          margin: 9.07px 5.67px;
+        }
+        .icon-fcb {
+          height: 20.4px;
+          width: 9.35px;
+          margin: 6.08px 12.75px;
+        }
+        .social-media__icon {
+          height: 20px;
+        }
+      }
+    }
+    &__contact {
+      font-size: 14px;
+      line-height: 186%;
+      letter-spacing: 0.02em;
+    }
+
+    &__copyright-text {
+      margin-block-start: 7px;
+      margin-block-end: 0;
+      inline-size: 278px;
+      overflow-wrap: normal;
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    font-size: 14px;
+    line-height: 186%;
+    letter-spacing: 0.02em;
+    padding: 121px 16px 0 16px;
+
+    &__title {
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 34px;
+      letter-spacing: 0.04em;
+      &--pink {
+        margin-block-end: 16px;
+        inline-size: 500px;
+        overflow-wrap: normal;
+      }
+      &--accent-pink {
+        font-size: 58px;
+        line-height: 66px;
+        margin-block-end: 60px;
+        inline-size: 500px;
+        overflow-wrap: normal;
+      }
+    }
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+    }
+    &__social-media-links {
+      gap: 30px;
+    }
+    &__contact {
+      font-size: 16px;
+    }
+    &__copyright-text {
+      margin-block-end: 4px;
+      overflow-wrap: normal;
+    }
+  }
+}
