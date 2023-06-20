@@ -9,36 +9,38 @@
   <body>
     <section class="testimonials">
       <!-- Profile Pictures -->
-      <picture class="testimonials__pfp--1">
-        <source
-          srcset="
-            ../images/testimonials-1.jpg,
-            ../images/testimonials-1@1.5x.webp 1.5x,
-            ../images/testimonials-1@2x.webp   2x
-          "
-        />
-        <img src="../images/testimonials-1.jpg" alt="Customer Picture" />
-      </picture>
-      <picture class="testimonials__pfp--2">
-        <source
-          srcset="
-            ../images/testimonials-2.jpg,
-            ../images/testimonials-2@1.5x.webp 1.5x,
-            ../images/testimonials-2@2x.webp   2x
-          "
-        />
-        <img src="../images/testimonials-2.jpg" alt="Customer Picture" />
-      </picture>
-      <picture class="testimonials__pfp--3">
-        <source
-          srcset="
-            ../images/testimonials-3.jpg,
-            ../images/testimonials-3@1.5x.webp 1.5x,
-            ../images/testimonials-3@2x.webp   2x
-          "
-        />
-        <img src="../images/testimonials-3.jpg" alt="Customer Picture" />
-      </picture>
+      <div class="testimonials__pfp-container">
+        <picture class="testimonials__pfp-container__pfp--1">
+          <source
+            srcset="
+              ../images/testimonials-1.jpg,
+              ../images/testimonials-1@1.5x.webp 1.5x,
+              ../images/testimonials-1@2x.webp   2x
+            "
+          />
+          <img src="../images/testimonials-1.jpg" alt="Customer Picture" />
+        </picture>
+        <picture class="testimonials__pfp-container__pfp--2">
+          <source
+            srcset="
+              ../images/testimonials-2.jpg,
+              ../images/testimonials-2@1.5x.webp 1.5x,
+              ../images/testimonials-2@2x.webp   2x
+            "
+          />
+          <img src="../images/testimonials-2.jpg" alt="Customer Picture" />
+        </picture>
+        <picture class="testimonials__pfp-container__pfp--3">
+          <source
+            srcset="
+              ../images/testimonials-3.jpg,
+              ../images/testimonials-3@1.5x.webp 1.5x,
+              ../images/testimonials-3@2x.webp   2x
+            "
+          />
+          <img src="../images/testimonials-3.jpg" alt="Customer Picture" />
+        </picture>
+      </div>
 
       <!-- Quotes -->
       <blockquote class="testimonials__quote-container">
@@ -130,9 +132,13 @@
             ></u>
           </span>
         </p>
+
         <div>
-          <cite class="testimonials__name">Emily</cite>,
-          <address class="testimonials__address">Los Angeles</address>
+          <cite class="testimonials__quote-container__identity">
+            <span>Emily, Los Angeles</span>
+            <span>Hannah, San Francisco</span>
+            <span>Jenna, Las Vegas</span>
+          </cite>
         </div>
       </blockquote>
 

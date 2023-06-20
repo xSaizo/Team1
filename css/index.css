@@ -126,16 +126,98 @@ body {
   flex-direction: column;
   place-items: center;
 }
-.testimonials__pfp--1 {
-  display: block;
+.testimonials__pfp-container {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 16px;
+  border-radius: 100%;
 }
-.testimonials__pfp--2 {
-  display: none;
+.testimonials__pfp-container__pfp--1 {
+  transform-origin: 50% 115%;
+  animation: pfp-1 30s linear infinite;
 }
-.testimonials__pfp--3 {
-  display: none;
+@keyframes pfp-1 {
+  0% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  32.5% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  33.33333333% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  99.16666666% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+.testimonials__pfp-container__pfp--2 {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  transform-origin: 50% 115%;
+  animation: pfp-2 30s linear infinite;
+}
+@keyframes pfp-2 {
+  0% {
+    opacity: 0;
+  }
+  32.5% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  33.33333333% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  65.83333333% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  66.66666666% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.testimonials__pfp-container__pfp--3 {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  transform-origin: 50% 115%;
+  animation: pfp-3 30s linear infinite;
+}
+@keyframes pfp-3 {
+  0% {
+    opacity: 0;
+  }
+  65.83333333% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  66.66666666% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  99.16666666% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
 }
 .testimonials__quote-container {
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -144,6 +226,7 @@ body {
   max-width: 960px;
 }
 .testimonials__quote-container div {
+  width: 100%;
   font-family: "DM Sans", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -160,11 +243,99 @@ body {
   color: #c7133e;
   padding: 16px 0;
 }
+.testimonials__quote-container__identity {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.testimonials__quote-container__identity span {
+  text-align: center;
+}
+.testimonials__quote-container__identity span:nth-child(1) {
+  animation: identity-1 30s linear infinite;
+}
+@keyframes identity-1 {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  32.5% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  33.33333333% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  99.16666666% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+}
+.testimonials__quote-container__identity span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  animation: identity-2 30s linear infinite;
+}
+@keyframes identity-2 {
+  0% {
+    opacity: 0;
+  }
+  32.5% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  33.33333333% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  65.83333333% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  66.66666666% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.testimonials__quote-container__identity span:nth-child(3) {
+  position: absolute;
+  top: 0;
+  animation: identity-3 30s linear infinite;
+}
+@keyframes identity-3 {
+  0% {
+    opacity: 0;
+  }
+  65.83333333% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  66.66666666% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  99.16666666% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}
 .testimonials__quote-container__quote {
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  place-items: center;
+  flex-direction: row;
+  place-content: center;
   text-align: center;
   background: #fafafa;
   margin: 0;
@@ -173,38 +344,31 @@ body {
 .testimonials__quote-container__quote span:nth-child(1) {
   z-index: 2;
   position: relative;
-  display: block;
   width: 75%;
   height: auto;
 }
 .testimonials__quote-container__quote span:nth-child(1):first-child {
-  transform: translateX(0);
   animation: text-translate-1 30s linear infinite;
 }
 @keyframes text-translate-1 {
   0% {
+    opacity: 1;
     transform: translateX(0);
-    display: block;
   }
   32.5% {
     opacity: 1;
     transform: translateX(0);
-    display: none;
   }
   33.33333333% {
     opacity: 0;
-    transform: translateX(-200%);
-    display: none;
+    transform: translateX(-100%);
   }
   99.16666666% {
     opacity: 0;
-    transform: translateX(200%);
-    display: none;
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
-    display: none;
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 .testimonials__quote-container__quote span:nth-child(1)::after {
@@ -233,21 +397,19 @@ body {
 }
 .testimonials__quote-container__quote span:nth-child(2) {
   z-index: 2;
-  position: relative;
+  position: absolute;
   width: 75%;
 }
 .testimonials__quote-container__quote span:nth-child(2):nth-child(2) {
-  transform: translateX(0);
   animation: text-translate-2 30s linear infinite;
 }
 @keyframes text-translate-2 {
   0% {
     opacity: 0;
-    transform: translateX(200%);
   }
   32.5% {
     opacity: 0;
-    transform: translateX(200%);
+    transform: translateX(100%);
   }
   33.33333333% {
     opacity: 1;
@@ -259,11 +421,10 @@ body {
   }
   66.66666666% {
     opacity: 0;
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
   100% {
     opacity: 0;
-    transform: translateX(200%);
   }
 }
 .testimonials__quote-container__quote span:nth-child(2)::after {
@@ -292,21 +453,19 @@ body {
 }
 .testimonials__quote-container__quote span:nth-child(3) {
   z-index: 2;
-  position: relative;
+  position: absolute;
   width: 75%;
 }
 .testimonials__quote-container__quote span:nth-child(3):nth-child(3) {
-  transform: translateX(0);
   animation: text-translate-3 30s linear infinite;
 }
 @keyframes text-translate-3 {
   0% {
     opacity: 0;
-    transform: translateX(200%);
   }
   65.83333333% {
     opacity: 0;
-    transform: translateX(200%);
+    transform: translateX(100%);
   }
   66.66666666% {
     opacity: 1;
@@ -318,7 +477,7 @@ body {
   }
   100% {
     opacity: 0;
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
 }
 .testimonials__quote-container__quote span:nth-child(3)::after {
@@ -354,7 +513,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
@@ -364,7 +523,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
@@ -374,7 +533,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
@@ -384,7 +543,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
@@ -394,7 +553,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
@@ -404,7 +563,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
@@ -414,7 +573,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
@@ -424,10 +583,10 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
-@media screen and (min-width: 319px) {
+@media screen and (min-width: 302px) {
   .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 14.2857142857%;
@@ -436,7 +595,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
@@ -446,7 +605,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
@@ -456,7 +615,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
@@ -466,7 +625,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
@@ -476,7 +635,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
@@ -486,7 +645,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
@@ -496,7 +655,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
@@ -506,10 +665,10 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
-@media screen and (min-width: 346px) {
+@media screen and (min-width: 329px) {
   .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 16.6666666667%;
@@ -518,7 +677,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
@@ -528,7 +687,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
@@ -538,7 +697,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
@@ -548,7 +707,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
@@ -558,7 +717,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
@@ -568,7 +727,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
@@ -578,7 +737,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
@@ -588,7 +747,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 400px) {
@@ -600,7 +759,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
@@ -610,7 +769,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
@@ -620,7 +779,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
@@ -630,7 +789,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
@@ -640,7 +799,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
@@ -650,7 +809,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
@@ -660,7 +819,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
@@ -670,10 +829,10 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
-@media screen and (min-width: 505px) {
+@media screen and (min-width: 479px) {
   .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 25%;
@@ -682,7 +841,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
@@ -692,7 +851,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
@@ -702,7 +861,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
@@ -712,7 +871,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
@@ -722,7 +881,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
@@ -732,7 +891,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
@@ -742,7 +901,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
@@ -752,7 +911,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 650px) {
@@ -764,7 +923,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
@@ -774,7 +933,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
@@ -784,7 +943,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
@@ -794,7 +953,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
@@ -804,7 +963,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
@@ -814,7 +973,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
@@ -824,7 +983,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
@@ -834,7 +993,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 861px) {
@@ -846,7 +1005,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
@@ -856,7 +1015,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
@@ -866,7 +1025,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
@@ -876,7 +1035,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
@@ -886,7 +1045,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
@@ -896,7 +1055,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
@@ -906,7 +1065,7 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
   .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
@@ -916,7 +1075,1155 @@ body {
     content: " ";
     width: 112%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 238px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 12.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 25%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 37.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 62.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 75%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 87.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 261px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 14.2857142857%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 28.5714285714%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 42.8571428571%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 57.1428571429%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 71.4285714286%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 85.7142857143%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 278px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 16.6666666667%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 83.3333333333%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 331px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 20%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 40%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 60%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 80%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 423px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 25%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 75%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 563px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 261px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 12.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 25%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 37.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 62.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 75%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 87.5%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 296px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 14.2857142857%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 28.5714285714%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 42.8571428571%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 57.1428571429%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 71.4285714286%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 85.7142857143%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 342px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 16.6666666667%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 83.3333333333%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 386px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 20%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 40%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 60%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 80%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 478px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 25%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 75%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 600px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 818px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 100%;
+    left: -7%;
+    visibility: visible;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -7%;
+    visibility: hidden;
+    content: " ";
+    width: 112%;
+    height: 1px;
+    background-color: #e1e1e1;
   }
 }
 .testimonials__navigation {
@@ -1073,7 +2380,6 @@ body {
   }
 }
 .testimonials img {
-  margin-bottom: 16px;
   border-radius: 50%;
 }
 .testimonials p {
@@ -1082,10 +2388,6 @@ body {
 .testimonials blockquote {
   quotes: "❛" "❜";
   margin: 0;
-}
-.testimonials address {
-  display: inline;
-  font-style: normal;
 }
 .testimonials cite {
   font-style: normal;
@@ -1102,7 +2404,6 @@ body {
     font-size: 14px;
   }
   .testimonials span:first-child {
-    display: block;
     width: 61.5%;
   }
   .testimonials span:first-child::after {
@@ -1112,7 +2413,6 @@ body {
     left: -27px;
   }
   .testimonials span:nth-child(2) {
-    display: none;
     width: 61.5%;
   }
   .testimonials span:nth-child(2)::after {
@@ -1122,7 +2422,6 @@ body {
     left: -27px;
   }
   .testimonials span:nth-child(3) {
-    display: none;
     width: 61.5%;
   }
   .testimonials span:nth-child(3)::after {
@@ -1147,7 +2446,7 @@ body {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 261px) {
-  .testimonials__quote-container__quote__underline--1 {
+  .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 12.5%;
     left: -11%;
@@ -1155,9 +2454,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--2 {
+  .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
     top: 25%;
     left: -11%;
@@ -1165,9 +2464,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--3 {
+  .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
     top: 37.5%;
     left: -11%;
@@ -1175,9 +2474,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--4 {
+  .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
     top: 50%;
     left: -11%;
@@ -1185,9 +2484,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--5 {
+  .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
     top: 62.5%;
     left: -11%;
@@ -1195,9 +2494,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--6 {
+  .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
     top: 75%;
     left: -11%;
@@ -1205,9 +2504,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--7 {
+  .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
     top: 87.5%;
     left: -11%;
@@ -1215,9 +2514,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--8 {
+  .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
     top: 100%;
     left: -11%;
@@ -1225,11 +2524,11 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 329px) {
-  .testimonials__quote-container__quote__underline--1 {
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 302px) {
+  .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 14.2857142857%;
     left: -11%;
@@ -1237,9 +2536,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--2 {
+  .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
     top: 28.5714285714%;
     left: -11%;
@@ -1247,9 +2546,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--3 {
+  .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
     top: 42.8571428571%;
     left: -11%;
@@ -1257,9 +2556,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--4 {
+  .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
     top: 57.1428571429%;
     left: -11%;
@@ -1267,9 +2566,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--5 {
+  .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
     top: 71.4285714286%;
     left: -11%;
@@ -1277,9 +2576,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--6 {
+  .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
     top: 85.7142857143%;
     left: -11%;
@@ -1287,9 +2586,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--7 {
+  .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
     top: 100%;
     left: -11%;
@@ -1297,9 +2596,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--8 {
+  .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1307,11 +2606,11 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 329px) {
-  .testimonials__quote-container__quote__underline--1 {
+  .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 16.6666666667%;
     left: -11%;
@@ -1319,9 +2618,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--2 {
+  .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
     top: 33.3333333333%;
     left: -11%;
@@ -1329,9 +2628,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--3 {
+  .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
     top: 50%;
     left: -11%;
@@ -1339,9 +2638,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--4 {
+  .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
     top: 66.6666666667%;
     left: -11%;
@@ -1349,9 +2648,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--5 {
+  .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
     top: 83.3333333333%;
     left: -11%;
@@ -1359,9 +2658,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--6 {
+  .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
     top: 100%;
     left: -11%;
@@ -1369,9 +2668,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--7 {
+  .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1379,9 +2678,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--8 {
+  .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1389,11 +2688,11 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 400px) {
-  .testimonials__quote-container__quote__underline--1 {
+  .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 20%;
     left: -11%;
@@ -1401,9 +2700,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--2 {
+  .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
     top: 40%;
     left: -11%;
@@ -1411,9 +2710,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--3 {
+  .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
     top: 60%;
     left: -11%;
@@ -1421,9 +2720,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--4 {
+  .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
     top: 80%;
     left: -11%;
@@ -1431,9 +2730,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--5 {
+  .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
     top: 100%;
     left: -11%;
@@ -1441,9 +2740,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--6 {
+  .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1451,9 +2750,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--7 {
+  .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1461,9 +2760,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--8 {
+  .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1471,11 +2770,11 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 505px) {
-  .testimonials__quote-container__quote__underline--1 {
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 479px) {
+  .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 25%;
     left: -11%;
@@ -1483,9 +2782,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--2 {
+  .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
     top: 50%;
     left: -11%;
@@ -1493,9 +2792,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--3 {
+  .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
     top: 75%;
     left: -11%;
@@ -1503,9 +2802,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--4 {
+  .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
     top: 100%;
     left: -11%;
@@ -1513,9 +2812,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--5 {
+  .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1523,9 +2822,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--6 {
+  .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1533,9 +2832,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--7 {
+  .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1543,9 +2842,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--8 {
+  .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1553,11 +2852,11 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 650px) {
-  .testimonials__quote-container__quote__underline--1 {
+  .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 33.3333333333%;
     left: -11%;
@@ -1565,9 +2864,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--2 {
+  .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
     top: 66.6666666667%;
     left: -11%;
@@ -1575,9 +2874,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--3 {
+  .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
     top: 100%;
     left: -11%;
@@ -1585,9 +2884,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--4 {
+  .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1595,9 +2894,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--5 {
+  .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1605,9 +2904,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--6 {
+  .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1615,9 +2914,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--7 {
+  .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1625,9 +2924,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--8 {
+  .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1635,11 +2934,11 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 861px) {
-  .testimonials__quote-container__quote__underline--1 {
+  .testimonials__quote-container__quote__underlines-1--1 {
     position: absolute;
     top: 50%;
     left: -11%;
@@ -1647,9 +2946,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--2 {
+  .testimonials__quote-container__quote__underlines-1--2 {
     position: absolute;
     top: 100%;
     left: -11%;
@@ -1657,9 +2956,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--3 {
+  .testimonials__quote-container__quote__underlines-1--3 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1667,9 +2966,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--4 {
+  .testimonials__quote-container__quote__underlines-1--4 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1677,9 +2976,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--5 {
+  .testimonials__quote-container__quote__underlines-1--5 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1687,9 +2986,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--6 {
+  .testimonials__quote-container__quote__underlines-1--6 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1697,9 +2996,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--7 {
+  .testimonials__quote-container__quote__underlines-1--7 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1707,9 +3006,9 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
   }
-  .testimonials__quote-container__quote__underline--8 {
+  .testimonials__quote-container__quote__underlines-1--8 {
     position: absolute;
     top: 0;
     left: -11%;
@@ -1717,7 +3016,1155 @@ body {
     content: " ";
     width: 122%;
     height: 1px;
-    background-color: red;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 238px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 12.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 25%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 37.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 62.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 75%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 87.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 261px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 14.2857142857%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 28.5714285714%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 42.8571428571%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 57.1428571429%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 71.4285714286%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 85.7142857143%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 278px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 16.6666666667%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 83.3333333333%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 331px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 20%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 40%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 60%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 80%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 423px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 25%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 75%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 563px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 768px) {
+  .testimonials__quote-container__quote__underlines-2--1 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--2 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--3 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--4 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--5 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-2--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 261px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 12.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 25%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 37.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 62.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 75%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 87.5%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 296px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 14.2857142857%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 28.5714285714%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 42.8571428571%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 57.1428571429%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 71.4285714286%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 85.7142857143%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 342px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 16.6666666667%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 83.3333333333%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 386px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 20%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 40%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 60%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 80%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 478px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 25%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 75%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 600px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 33.3333333333%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 66.6666666667%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-width: 818px) {
+  .testimonials__quote-container__quote__underlines-3--1 {
+    position: absolute;
+    top: 50%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--2 {
+    position: absolute;
+    top: 100%;
+    left: -11%;
+    visibility: visible;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--3 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--4 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--5 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--6 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--7 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+  .testimonials__quote-container__quote__underlines-3--8 {
+    position: absolute;
+    top: 0;
+    left: -11%;
+    visibility: hidden;
+    content: " ";
+    width: 122%;
+    height: 1px;
+    background-color: #e1e1e1;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {

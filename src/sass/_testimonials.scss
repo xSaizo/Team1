@@ -5,9 +5,36 @@ body {
   // background-color: #26476c;
 }
 
+// Colors
+$underlines-color: #e1e1e1;
 // Animations
 $transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $duration: 30s;
+// Media queries for the underlines
+$span-1__underline-1: 261px;
+$span-1__underline-2: 302px;
+$span-1__underline-3: 329px;
+$span-1__underline-4: 400px;
+$span-1__underline-5: 479px;
+$span-1__underline-6: 650px;
+$span-1__underline-7: 861px;
+
+$span-2__underline-1: 238px;
+$span-2__underline-2: 261px;
+$span-2__underline-3: 278px;
+$span-2__underline-4: 331px;
+$span-2__underline-5: 423px;
+$span-2__underline-6: 563px;
+$span-2__underline-7: 768px;
+
+$span-3__underline-1: 261px;
+$span-3__underline-2: 296px;
+$span-3__underline-3: 342px;
+$span-3__underline-4: 386px;
+$span-3__underline-5: 478px;
+$span-3__underline-6: 600px;
+$span-3__underline-7: 818px;
+
 .testimonials-container {
   box-sizing: border-box;
   width: 100%;
@@ -21,19 +48,121 @@ $duration: 30s;
   flex-direction: column;
   place-items: center;
 
-  &__pfp {
-    &--1 {
-      display: block;
-    }
-    &--2 {
-      display: none;
-    }
-    &--3 {
-      display: none;
+  &__pfp-container {
+    overflow: hidden;
+    position: relative;
+
+    margin-bottom: 16px;
+
+    border-radius: 100%;
+
+    &__pfp {
+      &--1 {
+        transform-origin: 50% 115%;
+        animation: pfp-1 $duration linear infinite;
+        @keyframes pfp-1 {
+          0% {
+            // 0s - 9.75s
+            opacity: 1;
+            transform: rotate(0);
+          }
+          32.5% {
+            // 9.75s
+            opacity: 1;
+            transform: rotate(0);
+          }
+          33.33333333% {
+            // 10s
+            opacity: 0;
+            transform: rotate(-90deg);
+          }
+          99.16666666% {
+            opacity: 0;
+          }
+          100% {
+            // 30s
+            opacity: 0;
+            transform: rotate(90deg);
+          }
+        }
+      }
+      &--2 {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+
+        transform-origin: 50% 115%;
+        animation: pfp-2 $duration linear infinite;
+        @keyframes pfp-2 {
+          0% {
+            // 0s - 9.75s
+            opacity: 0;
+          }
+          32.5% {
+            // 9.75s
+            opacity: 0;
+            transform: rotate(90deg);
+          }
+          33.33333333% {
+            // 10s
+            opacity: 1;
+            transform: rotate(0);
+          }
+          65.83333333% {
+            // 19.75s
+            opacity: 1;
+            transform: rotate(0);
+          }
+          66.66666666% {
+            // 20s
+            opacity: 0;
+            transform: rotate(-90deg);
+          }
+          100% {
+            // 30s
+            opacity: 0;
+          }
+        }
+      }
+      &--3 {
+        z-index: 2;
+        position: absolute;
+        left: 0;
+
+        transform-origin: 50% 115%;
+        animation: pfp-3 $duration linear infinite;
+        @keyframes pfp-3 {
+          0% {
+            // 0s - 19.75s
+            opacity: 0;
+          }
+          65.83333333% {
+            // 19.75s
+            opacity: 0;
+            transform: rotate(90deg);
+          }
+          66.66666666% {
+            // 20s
+            opacity: 1;
+            transform: rotate(0);
+          }
+          99.16666666% {
+            // 29.75s
+            opacity: 1;
+            transform: rotate(0);
+          }
+          100% {
+            // 30s
+            opacity: 0;
+            transform: rotate(-90deg);
+          }
+        }
+      }
     }
   }
 
   &__quote-container {
+    overflow: hidden;
     position: relative;
 
     display: flex;
@@ -43,13 +172,14 @@ $duration: 30s;
     width: 80%;
     max-width: calc(1200px * (80 / 100));
 
-    // Quote person location
+    // Quote person identity & location
     & div {
+      width: 100%;
+
       font-family: 'DM Sans', sans-serif;
       font-size: 20px;
       font-weight: 500;
       line-height: 1.6;
-
       // Suspension points
       &::before {
         content: '‧‧‧';
@@ -66,13 +196,118 @@ $duration: 30s;
         padding: 16px 0;
       }
     }
+    // Identity animations
+    &__identity {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      & span {
+        text-align: center;
+      }
+      & span:nth-child(1) {
+        animation: identity-1 $duration linear infinite;
+        @keyframes identity-1 {
+          0% {
+            // 0s - 9.75s
+            opacity: 1;
+            transform: translateX(0);
+          }
+          32.5% {
+            // 9.75s
+            opacity: 1;
+            transform: translateX(0);
+          }
+          33.33333333% {
+            // 10s
+            opacity: 0;
+            transform: translateX(-50%);
+          }
+          99.16666666% {
+            opacity: 0;
+          }
+          100% {
+            // 30s
+            opacity: 0;
+            transform: translateX(50%);
+          }
+        }
+      }
+      & span:nth-child(2) {
+        position: absolute;
+        top: 0;
+        animation: identity-2 $duration linear infinite;
+        @keyframes identity-2 {
+          0% {
+            // 0s - 9.75s
+            opacity: 0;
+          }
+          32.5% {
+            // 9.75s
+            opacity: 0;
+            transform: translateX(50%);
+          }
+          33.33333333% {
+            // 10s
+            opacity: 1;
+            transform: translateX(0);
+          }
+          65.83333333% {
+            // 19.75s
+            opacity: 1;
+            transform: translateX(0);
+          }
+          66.66666666% {
+            // 20s
+            opacity: 0;
+            transform: translateX(-50%);
+          }
+          100% {
+            // 30s
+            opacity: 0;
+          }
+        }
+      }
+      & span:nth-child(3) {
+        position: absolute;
+        top: 0;
+        animation: identity-3 $duration linear infinite;
+        @keyframes identity-3 {
+          0% {
+            // 0s - 19.75s
+            opacity: 0;
+          }
+          65.83333333% {
+            // 19.75s
+            opacity: 0;
+            transform: translateX(50%);
+          }
+          66.66666666% {
+            // 20s
+            opacity: 1;
+            transform: translateX(0);
+          }
+          99.16666666% {
+            // 29.75s
+            opacity: 1;
+            transform: translateX(0);
+          }
+          100% {
+            // 30s
+            opacity: 0;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
 
     // Quote text
     &__quote {
       overflow: hidden;
       display: flex;
-      flex-direction: column;
-      place-items: center;
+      flex-direction: row;
+      place-content: center;
 
       text-align: center;
       background: #fafafa;
@@ -81,12 +316,10 @@ $duration: 30s;
 
       padding: 47px 0 39px 0;
 
-      // Quote Text + Quotation Marks + Animations TODO: Fix animations
+      // Quote Text + Quotation Marks + Animations
       span:nth-child(1) {
         z-index: 2;
         position: relative;
-
-        display: block;
 
         width: 75%;
         height: auto;
@@ -100,37 +333,30 @@ $duration: 30s;
         // Animations //
         // First quote
         &:first-child {
-          transform: translateX(0);
           animation: text-translate-1 $duration linear infinite;
           @keyframes text-translate-1 {
             0% {
               // 0s - 9.75s
+              opacity: 1;
               transform: translateX(0);
-              display: block;
             }
             32.5% {
               // 9.75s
               opacity: 1;
               transform: translateX(0);
-              display: none;
             }
             33.33333333% {
               // 10s
               opacity: 0;
-              transform: translateX(-200%);
-              display: none;
+              transform: translateX(-100%);
             }
             99.16666666% {
-              // 29.75s
               opacity: 0;
-              transform: translateX(200%);
-              display: none;
             }
             100% {
               // 30s
-              opacity: 1;
-              transform: translateX(0);
-              display: none;
+              opacity: 0;
+              transform: translateX(100%);
             }
           }
         }
@@ -172,7 +398,7 @@ $duration: 30s;
       }
       span:nth-child(2) {
         z-index: 2;
-        position: relative;
+        position: absolute;
 
         width: 75%;
 
@@ -183,18 +409,16 @@ $duration: 30s;
         $top: 0;
 
         &:nth-child(2) {
-          transform: translateX(0);
           animation: text-translate-2 $duration linear infinite;
           @keyframes text-translate-2 {
             0% {
               // 0s - 9.75s
               opacity: 0;
-              transform: translateX(200%);
             }
             32.5% {
               // 9.75s
               opacity: 0;
-              transform: translateX(200%);
+              transform: translateX(100%);
             }
             33.33333333% {
               // 10s
@@ -209,12 +433,11 @@ $duration: 30s;
             66.66666666% {
               // 20s
               opacity: 0;
-              transform: translateX(-200%);
+              transform: translateX(-100%);
             }
             100% {
               // 30s
               opacity: 0;
-              transform: translateX(200%);
             }
           }
         }
@@ -256,7 +479,7 @@ $duration: 30s;
       }
       span:nth-child(3) {
         z-index: 2;
-        position: relative;
+        position: absolute;
 
         width: 75%;
 
@@ -267,18 +490,16 @@ $duration: 30s;
         $top: 0;
 
         &:nth-child(3) {
-          transform: translateX(0);
           animation: text-translate-3 $duration linear infinite;
           @keyframes text-translate-3 {
             0% {
               // 0s - 19.75s
               opacity: 0;
-              transform: translateX(200%);
             }
             65.83333333% {
               // 19.75s
               opacity: 0;
-              transform: translateX(200%);
+              transform: translateX(100%);
             }
             66.66666666% {
               // 20s
@@ -293,7 +514,7 @@ $duration: 30s;
             100% {
               // 30s
               opacity: 0;
-              transform: translateX(-200%);
+              transform: translateX(-100%);
             }
           }
         }
@@ -348,11 +569,11 @@ $duration: 30s;
           width: 112%;
           height: 1px;
 
-          background-color: red; // #e1e1e1;
+          background-color: $underlines-color;
         }
         &__underlines-1 {
           // 8 lines
-          @media screen and (min-width: 261px) {
+          @media screen and (min-width: $span-1__underline-1) {
             &--1 {
               @include underline(calc(100% / 8), visible);
             }
@@ -379,7 +600,7 @@ $duration: 30s;
             }
           }
           // 7 lines
-          @media screen and (min-width: 319px) {
+          @media screen and (min-width: $span-1__underline-2) {
             &--1 {
               @include underline(calc(100% / 7), visible);
             }
@@ -406,7 +627,7 @@ $duration: 30s;
             }
           }
           // 6 lines
-          @media screen and (min-width: 346px) {
+          @media screen and (min-width: $span-1__underline-3) {
             &--1 {
               @include underline(calc(100% / 6), visible);
             }
@@ -433,7 +654,7 @@ $duration: 30s;
             }
           }
           // 5 lines
-          @media screen and (min-width: 400px) {
+          @media screen and (min-width: $span-1__underline-4) {
             &--1 {
               @include underline(calc(100% / 5), visible);
             }
@@ -460,7 +681,7 @@ $duration: 30s;
             }
           }
           // 4 lines
-          @media screen and (min-width: 505px) {
+          @media screen and (min-width: $span-1__underline-5) {
             &--1 {
               @include underline(calc(100% / 4), visible);
             }
@@ -487,7 +708,7 @@ $duration: 30s;
             }
           }
           // 3 lines
-          @media screen and (min-width: 650px) {
+          @media screen and (min-width: $span-1__underline-6) {
             &--1 {
               @include underline(calc(100% / 3), visible);
             }
@@ -514,7 +735,389 @@ $duration: 30s;
             }
           }
           // 2 lines
-          @media screen and (min-width: 861px) {
+          @media screen and (min-width: $span-1__underline-7) {
+            &--1 {
+              @include underline(calc(100% / 2), visible);
+            }
+            &--2 {
+              @include underline(calc(100% / 1), visible);
+            }
+            &--3 {
+              @include underline(calc(0), hidden);
+            }
+            &--4 {
+              @include underline(calc(0), hidden);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+        }
+        &__underlines-2 {
+          // 8 lines
+          @media screen and (min-width: $span-2__underline-1) {
+            &--1 {
+              @include underline(calc(100% / 8), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 8) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 8) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 8) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 8) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc((100% / 8) * 6), visible);
+            }
+            &--7 {
+              @include underline(calc((100% / 8) * 7), visible);
+            }
+            &--8 {
+              @include underline(calc(100%), visible);
+            }
+          }
+          // 7 lines
+          @media screen and (min-width: $span-2__underline-2) {
+            &--1 {
+              @include underline(calc(100% / 7), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 7) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 7) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 7) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 7) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc((100% / 7) * 6), visible);
+            }
+            &--7 {
+              @include underline(calc(100%), visible);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 6 lines
+          @media screen and (min-width: $span-2__underline-3) {
+            &--1 {
+              @include underline(calc(100% / 6), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 6) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 6) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 6) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 6) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc(100%), visible);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 5 lines
+          @media screen and (min-width: $span-2__underline-4) {
+            &--1 {
+              @include underline(calc(100% / 5), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 5) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 5) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 5) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc(100%), visible);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 4 lines
+          @media screen and (min-width: $span-2__underline-5) {
+            &--1 {
+              @include underline(calc(100% / 4), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 4) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 4) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc(100%), visible);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 3 lines
+          @media screen and (min-width: $span-2__underline-6) {
+            &--1 {
+              @include underline(calc(100% / 3), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 3) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc(100% / 1), visible);
+            }
+            &--4 {
+              @include underline(calc(0), hidden);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 2 lines
+          @media screen and (min-width: $span-2__underline-7) {
+            &--1 {
+              @include underline(calc(100% / 2), visible);
+            }
+            &--2 {
+              @include underline(calc(100% / 1), visible);
+            }
+            &--3 {
+              @include underline(calc(0), hidden);
+            }
+            &--4 {
+              @include underline(calc(0), hidden);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+        }
+        &__underlines-3 {
+          // 8 lines
+          @media screen and (min-width: $span-3__underline-1) {
+            &--1 {
+              @include underline(calc(100% / 8), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 8) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 8) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 8) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 8) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc((100% / 8) * 6), visible);
+            }
+            &--7 {
+              @include underline(calc((100% / 8) * 7), visible);
+            }
+            &--8 {
+              @include underline(calc(100%), visible);
+            }
+          }
+          // 7 lines
+          @media screen and (min-width: $span-3__underline-2) {
+            &--1 {
+              @include underline(calc(100% / 7), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 7) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 7) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 7) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 7) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc((100% / 7) * 6), visible);
+            }
+            &--7 {
+              @include underline(calc(100%), visible);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 6 lines
+          @media screen and (min-width: $span-3__underline-3) {
+            &--1 {
+              @include underline(calc(100% / 6), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 6) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 6) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 6) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc((100% / 6) * 5), visible);
+            }
+            &--6 {
+              @include underline(calc(100%), visible);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 5 lines
+          @media screen and (min-width: $span-3__underline-4) {
+            &--1 {
+              @include underline(calc(100% / 5), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 5) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 5) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc((100% / 5) * 4), visible);
+            }
+            &--5 {
+              @include underline(calc(100%), visible);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 4 lines
+          @media screen and (min-width: $span-3__underline-5) {
+            &--1 {
+              @include underline(calc(100% / 4), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 4) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc((100% / 4) * 3), visible);
+            }
+            &--4 {
+              @include underline(calc(100%), visible);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 3 lines
+          @media screen and (min-width: $span-3__underline-6) {
+            &--1 {
+              @include underline(calc(100% / 3), visible);
+            }
+            &--2 {
+              @include underline(calc((100% / 3) * 2), visible);
+            }
+            &--3 {
+              @include underline(calc(100% / 1), visible);
+            }
+            &--4 {
+              @include underline(calc(0), hidden);
+            }
+            &--5 {
+              @include underline(calc(0), hidden);
+            }
+            &--6 {
+              @include underline(calc(0), hidden);
+            }
+            &--7 {
+              @include underline(calc(0), hidden);
+            }
+            &--8 {
+              @include underline(calc(0), hidden);
+            }
+          }
+          // 2 lines
+          @media screen and (min-width: $span-3__underline-7) {
             &--1 {
               @include underline(calc(100% / 2), visible);
             }
@@ -758,8 +1361,6 @@ $duration: 30s;
   // Change default properties of elements
   & {
     img {
-      margin-bottom: 16px;
-
       border-radius: 50%;
     }
 
@@ -770,12 +1371,6 @@ $duration: 30s;
     blockquote {
       quotes: '❛' '❜';
       margin: 0;
-    }
-
-    address {
-      display: inline;
-
-      font-style: normal;
     }
 
     cite {
@@ -819,7 +1414,7 @@ $duration: 30s;
             width: 120%;
             height: 1px;
 
-            background-color: red; // #e1e1e1;
+            background-color: $underlines-color;
           }
         }
       }
@@ -827,7 +1422,6 @@ $duration: 30s;
 
     // Quote text + Quotation marks
     span:first-child {
-      display: block;
       width: 61.5%;
 
       & {
@@ -841,7 +1435,6 @@ $duration: 30s;
       }
     }
     span:nth-child(2) {
-      display: none;
       width: 61.5%;
 
       & {
@@ -855,7 +1448,6 @@ $duration: 30s;
       }
     }
     span:nth-child(3) {
-      display: none;
       width: 61.5%;
 
       & {
@@ -911,12 +1503,12 @@ $duration: 30s;
             width: 122%;
             height: 1px;
 
-            background-color: red; // #e1e1e1;
+            background-color: $underlines-color;
           }
 
-          &__underline {
+          &__underlines-1 {
             // 8 lines
-            @media screen and (min-width: 261px) {
+            @media screen and (min-width: $span-1__underline-1) {
               &--1 {
                 @include underline(calc(100% / 8), visible);
               }
@@ -943,7 +1535,7 @@ $duration: 30s;
               }
             }
             // 7 lines
-            @media screen and (min-width: 329px) {
+            @media screen and (min-width: $span-1__underline-2) {
               &--1 {
                 @include underline(calc(100% / 7), visible);
               }
@@ -970,7 +1562,7 @@ $duration: 30s;
               }
             }
             // 6 lines
-            @media screen and (min-width: 329px) {
+            @media screen and (min-width: $span-1__underline-3) {
               &--1 {
                 @include underline(calc(100% / 6), visible);
               }
@@ -997,7 +1589,7 @@ $duration: 30s;
               }
             }
             // 5 lines
-            @media screen and (min-width: 400px) {
+            @media screen and (min-width: $span-1__underline-4) {
               &--1 {
                 @include underline(calc(100% / 5), visible);
               }
@@ -1024,7 +1616,7 @@ $duration: 30s;
               }
             }
             // 4 lines
-            @media screen and (min-width: 505px) {
+            @media screen and (min-width: $span-1__underline-5) {
               &--1 {
                 @include underline(calc(100% / 4), visible);
               }
@@ -1051,7 +1643,7 @@ $duration: 30s;
               }
             }
             // 3 lines
-            @media screen and (min-width: 650px) {
+            @media screen and (min-width: $span-1__underline-6) {
               &--1 {
                 @include underline(calc(100% / 3), visible);
               }
@@ -1078,7 +1670,389 @@ $duration: 30s;
               }
             }
             // 2 lines
-            @media screen and (min-width: 861px) {
+            @media screen and (min-width: $span-1__underline-7) {
+              &--1 {
+                @include underline(calc(100% / 2), visible);
+              }
+              &--2 {
+                @include underline(calc(100% / 1), visible);
+              }
+              &--3 {
+                @include underline(calc(0), hidden);
+              }
+              &--4 {
+                @include underline(calc(0), hidden);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+          }
+          &__underlines-2 {
+            // 8 lines
+            @media screen and (min-width: $span-2__underline-1) {
+              &--1 {
+                @include underline(calc(100% / 8), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 8) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 8) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 8) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 8) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc((100% / 8) * 6), visible);
+              }
+              &--7 {
+                @include underline(calc((100% / 8) * 7), visible);
+              }
+              &--8 {
+                @include underline(calc(100%), visible);
+              }
+            }
+            // 7 lines
+            @media screen and (min-width: $span-2__underline-2) {
+              &--1 {
+                @include underline(calc(100% / 7), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 7) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 7) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 7) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 7) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc((100% / 7) * 6), visible);
+              }
+              &--7 {
+                @include underline(calc(100%), visible);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 6 lines
+            @media screen and (min-width: $span-2__underline-3) {
+              &--1 {
+                @include underline(calc(100% / 6), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 6) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 6) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 6) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 6) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc(100%), visible);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 5 lines
+            @media screen and (min-width: $span-2__underline-4) {
+              &--1 {
+                @include underline(calc(100% / 5), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 5) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 5) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 5) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc(100%), visible);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 4 lines
+            @media screen and (min-width: $span-2__underline-5) {
+              &--1 {
+                @include underline(calc(100% / 4), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 4) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 4) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc(100%), visible);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 3 lines
+            @media screen and (min-width: $span-2__underline-6) {
+              &--1 {
+                @include underline(calc(100% / 3), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 3) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc(100% / 1), visible);
+              }
+              &--4 {
+                @include underline(calc(0), hidden);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 2 lines
+            @media screen and (min-width: $span-2__underline-7) {
+              &--1 {
+                @include underline(calc(100% / 2), visible);
+              }
+              &--2 {
+                @include underline(calc(100% / 1), visible);
+              }
+              &--3 {
+                @include underline(calc(0), hidden);
+              }
+              &--4 {
+                @include underline(calc(0), hidden);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+          }
+          &__underlines-3 {
+            // 8 lines
+            @media screen and (min-width: $span-3__underline-1) {
+              &--1 {
+                @include underline(calc(100% / 8), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 8) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 8) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 8) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 8) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc((100% / 8) * 6), visible);
+              }
+              &--7 {
+                @include underline(calc((100% / 8) * 7), visible);
+              }
+              &--8 {
+                @include underline(calc(100%), visible);
+              }
+            }
+            // 7 lines
+            @media screen and (min-width: $span-3__underline-2) {
+              &--1 {
+                @include underline(calc(100% / 7), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 7) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 7) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 7) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 7) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc((100% / 7) * 6), visible);
+              }
+              &--7 {
+                @include underline(calc(100%), visible);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 6 lines
+            @media screen and (min-width: $span-3__underline-3) {
+              &--1 {
+                @include underline(calc(100% / 6), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 6) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 6) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 6) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc((100% / 6) * 5), visible);
+              }
+              &--6 {
+                @include underline(calc(100%), visible);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 5 lines
+            @media screen and (min-width: $span-3__underline-4) {
+              &--1 {
+                @include underline(calc(100% / 5), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 5) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 5) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc((100% / 5) * 4), visible);
+              }
+              &--5 {
+                @include underline(calc(100%), visible);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 4 lines
+            @media screen and (min-width: $span-3__underline-5) {
+              &--1 {
+                @include underline(calc(100% / 4), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 4) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc((100% / 4) * 3), visible);
+              }
+              &--4 {
+                @include underline(calc(100%), visible);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 3 lines
+            @media screen and (min-width: $span-3__underline-6) {
+              &--1 {
+                @include underline(calc(100% / 3), visible);
+              }
+              &--2 {
+                @include underline(calc((100% / 3) * 2), visible);
+              }
+              &--3 {
+                @include underline(calc(100% / 1), visible);
+              }
+              &--4 {
+                @include underline(calc(0), hidden);
+              }
+              &--5 {
+                @include underline(calc(0), hidden);
+              }
+              &--6 {
+                @include underline(calc(0), hidden);
+              }
+              &--7 {
+                @include underline(calc(0), hidden);
+              }
+              &--8 {
+                @include underline(calc(0), hidden);
+              }
+            }
+            // 2 lines
+            @media screen and (min-width: $span-3__underline-7) {
               &--1 {
                 @include underline(calc(100% / 2), visible);
               }
