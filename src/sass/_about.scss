@@ -112,6 +112,8 @@
     &:hover,
     &:focus {
       background-color: var(--btn-hover-focus);
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     }
   }
   /*Modal*/
@@ -501,5 +503,38 @@
   .modal:hover,
   .modal:focus {
     transform: scale(1.05);
+  }
+  .modal-content {
+    padding: 8px;
+    background: var(--modal-backround-color);
+
+    margin: 0 auto;
+
+    position: relative;
+    overflow: scroll;
+
+    &__modal-title {
+      font-family: 'Titan One';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.28;
+      text-align: center;
+      color: #d41443;
+      padding-top: 20px;
+    }
+
+    &__modal-text {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.58;
+      letter-spacing: 0.04em;
+      color: #907e82;
+      text-align: justify;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }
