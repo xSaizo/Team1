@@ -1,14 +1,61 @@
 <div class="modal is-hidden" data-modal data-modal1>
   <div class="modal__content">
     <button class="modal__close-btn" data-modal-close>&times;</button>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d116862.54554679655!2d90.40409584970706!3d23.749000170125925!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1550040341458"
-      width="100%"
-      height="100%"
-      frameborder="0"
-      style="border: 0"
-      allowfullscreen
-    ></iframe>
+    <form class="form">
+      <div
+        class="form-group"
+        role="group"
+        aria-labelledby="contact-details-head"
+      >
+        <p id="contact-details-head">Enter your contact details</p>
+        <label class="form-name forgm-group__label">
+          Name:
+          <input class="forgm-group__input" type="text" name="username" />
+        </label >
+        <label class="form-tel forgm-group__label">
+          Tel:
+          <input class="forgm-group__input" type="tel" name="tel" />
+        </label>
+        <label class=" form-adress forgm-group__label">
+          Adress:
+          <input class="forgm-group__input" type="text" name="Adress" />
+        </label>
+      </div>
+
+      <div class="form-group" role="group" aria-labelledby="language-head">
+        <p id="language-head">Choose your Ice Cream:</p>
+        <label class="forgm-group__label">
+          <input class="forgm-group__input" type="radio" name="type" value="type" />
+          Ice Cream
+        </label >
+        <label class="forgm-group__label">
+          <input class="forgm-group__input"  type="radio" name="type" value="type" />
+          Ice Coffee
+        </label class="forgm-group__label">
+        <label class="forgm-group__label">
+          <input class="forgm-group__input" type="radio" name="type" value="type" />
+          Milkshakes
+        </label>
+      </div>
+
+      <div class="form-group" role="group" aria-labelledby="newsletter-head">
+        <p id="newsletter-head">Choose your type:</p>
+        <label class="forgm-group__label">
+          <input class="forgm-group__input" type="radio" name="flavor" value="flavor" />
+          Chocolate
+        </label>
+        <label class="forgm-group__label">
+          <input class="forgm-group__input" type="radio" name="flavor" value="flavor" />
+          Strawberry
+        </label>
+        <label class="forgm-group__label">
+          <input class="forgm-group__input" type="radio" name="flavor" value="flavor" />
+          Vanilla
+        </label>
+      </div>
+
+      <button class=" form-button" type="submit">Send Order</button>
+    </form>
   </div>
 </div>
 <div class="modal is-hidden" data-modal data-modal0>

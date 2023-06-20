@@ -2,7 +2,7 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  height: 1030px;
+  height: 461px;
   display: grid;
   place-items: center;
 }
@@ -50,6 +50,9 @@
 
 // Mobile
 @media screen and (max-width: 480px) {
+  .gallery-container {
+    height: 169px;
+  }
   .gallery {
     position: absolute;
     top: -25px;
@@ -84,6 +87,9 @@
 
 // Tablet
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  .gallery-container {
+    height: 190px;
+  }
   .gallery {
     position: absolute;
     top: -190px;
